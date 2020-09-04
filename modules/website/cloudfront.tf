@@ -10,8 +10,8 @@ resource "aws_cloudfront_distribution" "site_s3_distribution" {
     comment             = "${var.app_name}-${var.git_repository_branch}-cdn"    
 
     origin {
-        domain_name = "${aws_s3_bucket.bucket_site.website_endpoint}"
-        origin_id   = "${aws_s3_bucket.bucket_site.id}"
+        domain_name = aws_s3_bucket.bucket_site.website_endpoint
+        origin_id   = aws_s3_bucket.bucket_site.id
 
         custom_origin_config {
             http_port = 80
@@ -26,7 +26,7 @@ resource "aws_cloudfront_distribution" "site_s3_distribution" {
     allowed_methods  = ["DELETE", "GET", "HEAD", "OPTIONS", "PATCH", "POST", "PUT"]
     cached_methods   = ["GET", "HEAD"]
 
-    target_origin_id = "${aws_s3_bucket.bucket_site.id}"
+    target_origin_id = aws_s3_bucket.bucket_site.id
 
     forwarded_values {
       query_string = true
@@ -49,7 +49,7 @@ resource "aws_cloudfront_distribution" "site_s3_distribution" {
         allowed_methods  = ["GET", "HEAD", "OPTIONS"]
         cached_methods   = ["GET", "HEAD"]
 
-        target_origin_id = "${aws_s3_bucket.bucket_site.id}"
+        target_origin_id = aws_s3_bucket.bucket_site.id
 
         forwarded_values {
 
@@ -76,7 +76,7 @@ resource "aws_cloudfront_distribution" "site_s3_distribution" {
         allowed_methods  = ["GET", "HEAD", "OPTIONS"]
         cached_methods   = ["GET", "HEAD"]
 
-        target_origin_id = "${aws_s3_bucket.bucket_site.id}"
+        target_origin_id = aws_s3_bucket.bucket_site.id
         
         forwarded_values {
             query_string = true
@@ -99,7 +99,7 @@ resource "aws_cloudfront_distribution" "site_s3_distribution" {
         allowed_methods  = ["GET", "HEAD", "OPTIONS"]
         cached_methods   = ["GET", "HEAD"]
 
-        target_origin_id = "${aws_s3_bucket.bucket_site.id}"
+        target_origin_id = aws_s3_bucket.bucket_site.id
 
         forwarded_values {
             query_string = true

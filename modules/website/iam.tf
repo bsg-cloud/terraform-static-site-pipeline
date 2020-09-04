@@ -6,8 +6,8 @@ resource "aws_iam_role" "codepipeline_role" {
 data "template_file" "codepipeline_policy" {
   template = "${file("${path.module}/templates/policies/codepipeline.json")}"
 
-  vars {
-    aws_s3_bucket_arn = "${aws_s3_bucket.source.arn}"
+  vars = {
+    aws_s3_bucket_arn = aws_s3_bucket.source.arn
   }
 }
 
@@ -25,8 +25,8 @@ resource "aws_iam_role" "codebuild_role" {
 data "template_file" "codebuild_policy" {
   template = "${file("${path.module}/templates/policies/codebuild.json")}"
 
-  vars {
-    aws_s3_bucket_arn = "${aws_s3_bucket.source.arn}"
+  vars = {
+    aws_s3_bucket_arn = aws_s3_bucket.source.arn
   }
 }
 
