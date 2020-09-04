@@ -4,9 +4,12 @@ phases:
   pre_build:
     commands:
       - echo Deploy website
+      - npm install
+      - npm run build
   build:
     commands:
       - rm -rf .git
+      - cd ./dist
       - aws s3 sync --delete . s3://${bucket_name} --cache-control max-age=3600
   post_build:
     commands:
