@@ -3,6 +3,10 @@ variable "app_name" {
   default     = "raj-personal-site"
 }
 
+variable "account_id" {
+  description = "account id"
+  default     = ""
+}
 variable "aws_region" {
   description = "AWS Region for the VPC"
   default     = "us-east-1"
