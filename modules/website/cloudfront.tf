@@ -2,10 +2,9 @@ resource "aws_cloudfront_distribution" "site_s3_distribution" {
 
     // aliases = ["example.example.com"]
 
-    depends_on = ["aws_s3_bucket.bucket_site"]
+    depends_on = [aws_s3_bucket.bucket_site]
     enabled             = true
     is_ipv6_enabled     = true
-    comment             = ""
     default_root_object = "index.html"
     
     comment             = "${var.app_name}-${var.git_repository_branch}-cdn"    
