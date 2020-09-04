@@ -22,6 +22,10 @@ variable "git_repository_dev_branch" {
   description = "Github Project Branch"
 }
 
+variable "github_token" {
+  description = "Github Project Branch"
+}
+
 variable "account_id" {
   description = "AWS Account ID"
 }

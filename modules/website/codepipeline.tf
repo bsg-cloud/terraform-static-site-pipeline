@@ -24,6 +24,7 @@ resource "aws_codepipeline" "prod_pipeline" {
         Owner  = "${var.git_repository_owner}"
         Repo   = "${var.git_repository_name}"
         Branch = "${var.git_repository_branch}"
+        OAuthToken = "${var.github_token}"
       }
     }
   }

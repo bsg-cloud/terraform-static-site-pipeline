@@ -23,6 +23,10 @@ variable "git_repository_branch" {
   default     = "master"
 }
 
+variable "github_token" {
+  description = "Github Token"
+  default     = ""
+}
 variable "git_repository_dev_branch" {
   description = "Github Project Branch"
   default     = "develop"
