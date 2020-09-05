@@ -38,7 +38,7 @@ variable "git_repository_dev_branch" {
 
 variable "cdn_domains" {
   description = "Domain alias"
-  type        = list
+  type        = list(string)
   default     = []
 }
 
