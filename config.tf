@@ -41,3 +41,7 @@ variable "cdn_domains" {
   type        = list
   default     = []
 }
+
+variable "acm_certi_arn" {
+  default = ""
+}

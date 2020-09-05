@@ -9,6 +9,7 @@ module "production" {
   git_repository_dev_branch = "${var.git_repository_dev_branch}"
   github_token              = "${var.github_token}"
   account_id                = "${var.account_id}"
+  acm_certi_arn             = var.acm_certi_arn
 }
 
 
