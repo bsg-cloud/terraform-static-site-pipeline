@@ -32,7 +32,7 @@ resource "aws_codebuild_project" "prod_app_build" {
 
   source {
     type      = "CODEPIPELINE"
-    buildspec = "${data.template_file.prod_buildspec.rendered}"
+    buildspec = data.template_file.prod_buildspec.rendered
   }
 
 }

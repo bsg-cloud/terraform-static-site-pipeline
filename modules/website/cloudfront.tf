@@ -36,7 +36,8 @@ resource "aws_cloudfront_distribution" "site_s3_distribution" {
       }
     }
 
-    viewer_protocol_policy = "allow-all"
+    //viewer_protocol_policy = "allow-all"
+    viewer_protocol_policy = "redirect-to-https"
     min_ttl                = 0
     default_ttl            = 0
     max_ttl                = 0
@@ -65,7 +66,8 @@ resource "aws_cloudfront_distribution" "site_s3_distribution" {
         default_ttl            = 3600
         max_ttl                = 86400
         compress               = true
-        viewer_protocol_policy = "allow-all"
+    //    viewer_protocol_policy = "allow-all"
+        viewer_protocol_policy = "redirect-to-https"
 
     }
 
@@ -89,7 +91,8 @@ resource "aws_cloudfront_distribution" "site_s3_distribution" {
         default_ttl            = 3600
         max_ttl                = 86400
         compress               = true
-        viewer_protocol_policy = "allow-all"
+        //viewer_protocol_policy = "allow-all"
+        viewer_protocol_policy = "redirect-to-https"
 
     }
 
@@ -112,7 +115,9 @@ resource "aws_cloudfront_distribution" "site_s3_distribution" {
         default_ttl            = 3600
         max_ttl                = 86400
         compress               = true
-        viewer_protocol_policy = "allow-all"
+        //viewer_protocol_policy = "allow-all"
+        viewer_protocol_policy = "redirect-to-https"
+
 
     }
 
