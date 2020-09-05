@@ -4,7 +4,7 @@ resource "aws_iam_role" "codepipeline_role" {
 }
 
 data "template_file" "codepipeline_policy" {
-  template = "${file("${path.module}/templates/policies/codepipeline.json")}"
+  template = file("${path.module}/templates/policies/codepipeline.json")
 
   vars = {
     aws_s3_bucket_arn = aws_s3_bucket.source.arn

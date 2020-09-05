@@ -35,3 +35,9 @@ variable "git_repository_dev_branch" {
   description = "Github Project Branch"
   default     = "develop"
 }
+
+variable "cdn_domains" {
+  description = "Domain alias"
+  type        = list
+  default     = []
+}

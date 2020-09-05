@@ -29,3 +29,9 @@ variable "github_token" {
 variable "account_id" {
   description = "AWS Account ID"
 }
+
+variable "cdn_domains" {
+  description = "Domain alias"
+  type = list
+  default = []
+}

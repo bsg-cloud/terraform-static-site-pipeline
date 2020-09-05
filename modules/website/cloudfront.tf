@@ -1,6 +1,6 @@
 resource "aws_cloudfront_distribution" "site_s3_distribution" {
 
-    // aliases = ["example.example.com"]
+    aliases = var.cdn_domains 
 
     depends_on = [aws_s3_bucket.bucket_site]
     enabled             = true
