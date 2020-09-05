@@ -8,7 +8,7 @@ phases:
     commands:
       - echo Deploy website
       - npm install
-      - npm run build
+      - npm run build-dev
   build:
     commands:
       - rm -rf .git
