@@ -5,3 +5,7 @@ output "website-s3-endpoint" {
 output "website-cdn-endpoint" {
   value = "${module.production.s3-cdn}"
 }
+
+output "website-cdn-pipeline-arn" {
+  value = "${module.production.cdn-codepipeline-arn}"
+}
