@@ -1,3 +1,7 @@
+
+variable "env" {
+  description = "Website project stage"
+}
 variable "app_name" {
   description = "Website project name"
 }

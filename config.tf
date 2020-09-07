@@ -1,3 +1,8 @@
+
+variable "env" {
+  description = "Website project stage"
+  default     = "dev" #prd
+}
 variable "app_name" {
   description = "Website project name"
   default     = "raj-personal-site"

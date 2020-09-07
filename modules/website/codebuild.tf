@@ -2,6 +2,7 @@ data "template_file" "prod_buildspec" {
   template = "${file("${path.module}/templates/buildspec.yml")}"
 
   vars = {
+    env               = var.env
     app_name          = "${var.app_name}"
     stage             = "${var.git_repository_branch}"
     bucket_name       = "${aws_s3_bucket.bucket_site.bucket}"
