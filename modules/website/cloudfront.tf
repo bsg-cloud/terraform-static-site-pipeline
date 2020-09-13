@@ -24,11 +24,15 @@ resource "aws_cloudfront_distribution" "site_s3_distribution" {
   default_cache_behavior {
 
     allowed_methods = ["DELETE", "GET", "HEAD", "OPTIONS", "PATCH", "POST", "PUT"]
-    cached_methods  = ["GET", "HEAD"]
+    cached_methods  = ["GET", "HEAD", "OPTIONS"]
 
     target_origin_id = aws_s3_bucket.bucket_site.id
 
     forwarded_values {
+      headers = [
+        "Accept",
+        "Origin",
+      ]
       query_string = true
 
       cookies {
@@ -79,7 +83,7 @@ resource "aws_cloudfront_distribution" "site_s3_distribution" {
 
     path_pattern    = "*.css"
     allowed_methods = ["GET", "HEAD", "OPTIONS"]
-    cached_methods  = ["GET", "HEAD", "OPTIONS"]
+    cached_methods  = ["GET", "HEAD" ]
 
     target_origin_id = aws_s3_bucket.bucket_site.id
 
