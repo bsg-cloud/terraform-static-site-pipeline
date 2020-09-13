@@ -18,3 +18,7 @@ phases:
     commands:
       - echo 'Invalidating distribuition cache'
       - aws cloudfront create-invalidation --distribution-id ${distribuition_id} --paths "/*"
+artifacts:
+  files:
+    - "**/*"
+  name: "web-dist-dev"
