@@ -3,7 +3,7 @@ resource "aws_codepipeline" "prod_pipeline" {
   role_arn = aws_iam_role.codepipeline_role.arn
 
   depends_on = [aws_s3_bucket.bucket_site, aws_s3_bucket.source]
-  
+
   artifact_store {
     location = aws_s3_bucket.source.bucket
     type     = "S3"
@@ -21,9 +21,9 @@ resource "aws_codepipeline" "prod_pipeline" {
       output_artifacts = ["source"]
 
       configuration = {
-        Owner  = "${var.git_repository_owner}"
-        Repo   = "${var.git_repository_name}"
-        Branch = "${var.git_repository_branch}"
+        Owner      = "${var.git_repository_owner}"
+        Repo       = "${var.git_repository_name}"
+        Branch     = "${var.git_repository_branch}"
         OAuthToken = "${var.github_token}"
       }
     }
@@ -33,16 +33,40 @@ resource "aws_codepipeline" "prod_pipeline" {
     name = "Deploy"
 
     action {
-      name             = "Build"
-      category         = "Build"
-      owner            = "AWS"
-      provider         = "CodeBuild"
-      version          = "1"
-      input_artifacts  = ["source"]
-
+      name            = "Build"
+      category        = "Build"
+      owner           = "AWS"
+      provider        = "CodeBuild"
+      version         = "1"
+      input_artifacts = ["source"]
+      output_artifacts = [
+        "BuildArtifact"
+      ]
       configuration = {
         ProjectName = "${var.app_name}-${var.git_repository_branch}-codebuild"
       }
+    }
+  }
+
+  stage {
+    name = "Web2Server"
+
+    action {
+      category = "Deploy"
+      configuration = {
+        "ApplicationName"     = "eh-codedeploy-app"
+        "DeploymentGroupName" = "ehanglas_webserver_deploy"
+      }
+      input_artifacts = [
+        "BuildArtifact"
+      ]
+      name             = "Web2Server"
+      output_artifacts = []
+      owner            = "AWS"
+      provider         = "CodeDeploy"
+      #region           = "ap-northeast-2" 
+      run_order = 1
+      version   = "1"
     }
   }
 }

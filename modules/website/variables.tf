@@ -36,9 +36,9 @@ variable "account_id" {
 
 variable "cdn_domains" {
   description = "Domain alias"
-  type = list(string)
+  type        = list(string)
 }
 variable "acm_certi_arn" {
   description = "ACM Certificate ARN"
-  default = "" 
+  default     = ""
 }

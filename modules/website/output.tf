@@ -3,7 +3,7 @@ output "s3-bucket" {
 }
 
 output "s3-cdn" {
-  value = "${aws_cloudfront_distribution.site_s3_distribution.domain_name }"
+  value = "${aws_cloudfront_distribution.site_s3_distribution.domain_name}"
 }
 
 output "cdn-codepipeline-arn" {

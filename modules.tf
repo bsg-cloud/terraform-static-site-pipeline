@@ -11,7 +11,7 @@ module "production" {
   account_id                = "${var.account_id}"
   acm_certi_arn             = var.acm_certi_arn
   cdn_domains               = var.cdn_domains
-  env = var.env
+  env                       = var.env
 }
 
 
