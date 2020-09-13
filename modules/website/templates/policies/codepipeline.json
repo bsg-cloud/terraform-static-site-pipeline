@@ -114,39 +114,39 @@
       },
       
                    {
-                       Action   : [
+                      "Action"  : [
                            "s3:PutObject"
-                        ]
-                       Effect   : "Allow"
-                       Resource : [
+                        ],
+                      "Effect"  : "Allow",
+                      "Resource": [
                            "arn:aws:s3:::codepipeline*",
                            "arn:aws:s3:::elasticbeanstalk*"
                         ]
                     },
                    {
-                       Action   : [
+                      "Action"  : [
                            "codecommit:CancelUploadArchive",
                            "codecommit:GetBranch",
                            "codecommit:GetCommit",
                            "codecommit:GetUploadArchiveStatus",
-                           "codecommit:UploadArchive",
-                       ]
-                       Effect   : "Allow"
-                       Resource : "*"
+                           "codecommit:UploadArchive"
+                       ],
+                      "Effect"  : "Allow",
+                      "Resource": "*"
                     },
                    {
-                       Action   : [
+                      "Action"  : [
                            "codedeploy:CreateDeployment",
                            "codedeploy:GetApplicationRevision",
                            "codedeploy:GetDeployment",
                            "codedeploy:GetDeploymentConfig",
-                           "codedeploy:RegisterApplicationRevision",
-                        ]
-                       Effect   : "Allow"
-                       Resource : "*"
+                           "codedeploy:RegisterApplicationRevision"
+                        ],
+                      "Effect"  : "Allow",
+                      "Resource": "*"
                     },
                    {
-                       Action   : [
+                      "Action"  : [
                            "elasticbeanstalk:*",
                            "ec2:*",
                            "elasticloadbalancing:*",
@@ -159,20 +159,20 @@
                            "sqs:*",
                            "ecs:*",
                            "iam:PassRole"
-                        ]
-                       Effect   : "Allow"
-                       Resource : "*"
+                        ],
+                      "Effect"  : "Allow",
+                      "Resource": "*"
                     },
                    {
-                       Action   : [
+                      "Action"  : [
                            "lambda:InvokeFunction",
-                           "lambda:ListFunctions",
-                        ]
-                       Effect   : "Allow"
-                       Resource : "*"
+                           "lambda:ListFunctions"
+                        ],
+                      "Effect"  : "Allow",
+                      "Resource": "*"
                     },
                    {
-                       Action   : [
+                      "Action"  : [
                            "opsworks:CreateDeployment",
                            "opsworks:DescribeApps",
                            "opsworks:DescribeCommands",
@@ -181,12 +181,12 @@
                            "opsworks:DescribeStacks",
                            "opsworks:UpdateApp",
                            "opsworks:UpdateStack"
-                        ]
-                       Effect   : "Allow"
-                       Resource : "*"
+                        ],
+                      "Effect"  : "Allow",
+                      "Resource": "*"
                     },
                    {
-                       Action   : [
+                      "Action"  : [
                            "cloudformation:CreateStack",
                            "cloudformation:DeleteStack",
                            "cloudformation:DescribeStacks",
@@ -198,27 +198,27 @@
                            "cloudformation:SetStackPolicy",
                            "cloudformation:ValidateTemplate",
                            "iam:PassRole"
-                        ]
-                       Effect   : "Allow"
-                       Resource : "*"
+                        ],
+                      "Effect"  : "Allow",
+                      "Resource": "*"
                     },
                    {
-                       Action   : [
+                      "Action"  : [
                            "codebuild:BatchGetBuilds",
                            "codebuild:StartBuild"
-                        ]
-                       Effect   : "Allow"
-                       Resource : "*"
+                        ],
+                      "Effect"  : "Allow",
+                      "Resource": "*"
                     },
                    {
-                       Action   : [
+                      "Action"  : [
                            "kms:DescribeKey",
                            "kms:GenerateDataKey*",
                            "kms:Encrypt"
                            
-                        ]
-                       Effect   : "Allow"
-                       Resource : "arn:aws:kms:ap-northeast-2:372082813534:key/e94dd09b-274a-49a0-a442-0de552f29f8c"
+                        ],
+                      "Effect"  : "Allow",
+                      "Resource": "arn:aws:kms:ap-northeast-2:372082813534:key/e94dd09b-274a-49a0-a442-0de552f29f8c"
                     }
     ]
   }
