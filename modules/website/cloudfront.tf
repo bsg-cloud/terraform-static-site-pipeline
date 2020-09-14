@@ -51,7 +51,7 @@ resource "aws_cloudfront_distribution" "site_s3_distribution" {
   ordered_cache_behavior {
 
     path_pattern    = "*.js"
-    allowed_methods = ["GET", "HEAD", "OPTIONS"]
+    allowed_methods = ["DELETE", "GET", "HEAD", "OPTIONS", "PATCH", "POST", "PUT"]
     cached_methods  = ["GET", "HEAD", "OPTIONS"]
 
     target_origin_id = aws_s3_bucket.bucket_site.id
@@ -82,7 +82,7 @@ resource "aws_cloudfront_distribution" "site_s3_distribution" {
   ordered_cache_behavior {
 
     path_pattern    = "*.css"
-    allowed_methods = ["GET", "HEAD", "OPTIONS"]
+    allowed_methods = ["DELETE", "GET", "HEAD", "OPTIONS", "PATCH", "POST", "PUT"]
     cached_methods  = ["GET", "HEAD" ]
 
     target_origin_id = aws_s3_bucket.bucket_site.id
@@ -106,7 +106,7 @@ resource "aws_cloudfront_distribution" "site_s3_distribution" {
   ordered_cache_behavior {
 
     path_pattern    = "*.png"
-    allowed_methods = ["GET", "HEAD", "OPTIONS"]
+    allowed_methods = ["DELETE", "GET", "HEAD", "OPTIONS", "PATCH", "POST", "PUT"]
     cached_methods  = ["GET", "HEAD"]
 
     target_origin_id = aws_s3_bucket.bucket_site.id
