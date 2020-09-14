@@ -54,8 +54,8 @@ resource "aws_codepipeline" "prod_pipeline" {
     action {
       category = "Deploy"
       configuration = {
-        "ApplicationName"     = "eh-codedeploy-app"
-        "DeploymentGroupName" = "ehanglas_webserver_deploy"
+        "ApplicationName"     = var.codedeploy_app_name #"eh-codedeploy-app"
+        "DeploymentGroupName" = var.codedeploy_group_name #"ehanglas_webserver_deploy"
       }
       input_artifacts = [
         "BuildArtifact"

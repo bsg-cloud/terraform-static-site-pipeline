@@ -12,6 +12,9 @@ module "production" {
   acm_certi_arn             = var.acm_certi_arn
   cdn_domains               = var.cdn_domains
   env                       = var.env
+  codedeploy_app_name       = var.codedeploy_app_name
+  codedeploy_group_name     = var.codedeploy_group_name
+
 }
 
 

@@ -50,3 +50,9 @@ variable "cdn_domains" {
 variable "acm_certi_arn" {
   default = ""
 }
+variable "codedeploy_app_name" {
+  default     = ""
+}
+variable "codedeploy_group_name" {
+  default     = ""
+}

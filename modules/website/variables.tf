@@ -42,3 +42,10 @@ variable "acm_certi_arn" {
   description = "ACM Certificate ARN"
   default     = ""
 }
+
+variable "codedeploy_app_name" {
+  default     = ""
+}
+variable "codedeploy_group_name" {
+  default     = ""
+}
