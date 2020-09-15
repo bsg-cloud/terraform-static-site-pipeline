@@ -10,4 +10,9 @@ output "cdn-codepipeline-arn" {
   value = aws_codepipeline.prod_pipeline.arn
 }
 
+output "zone_id" {
+  value = "${aws_cloudfront_distribution.site_s3_distribution.hosted_zone_id}"
+}
+
+
 
