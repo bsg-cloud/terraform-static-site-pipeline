@@ -29,7 +29,7 @@ resource "aws_s3_bucket_policy" "bucket_site_policy" {
             {
                 "Sid": "2",
                 "Effect": "Allow",
-                "Principal": { "AWS": "${aws_cloudfront_origin_access_identity.origin_access_identity.id}"},
+                "Principal": { "AWS": "arn:aws:iam::cloudfront:user/CloudFront Origin Access Identity E2RRZG8TJVQ3CV"},
                 "Action": "s3:GetObject",
                 "Resource": "${aws_s3_bucket.bucket_site.arn}/*"
             }
