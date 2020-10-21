@@ -26,6 +26,14 @@ resource "aws_s3_bucket_policy" "bucket_site_policy" {
         "Version": "2008-10-17",
         "Id": "Allow-Public-Access-${var.app_name}-${var.account_id}",
         "Statement": [
+          {
+                "Sid": "Allow-Public-Access-${var.app_name}-${var.account_id}",
+                "Effect": "Allow",
+                "Principal": "*",
+                "Action": "s3:GetObject",
+                "Resource": "${aws_s3_bucket.bucket_site.arn}/*"
+            },
+
             {
                 "Sid": "2",
                 "Effect": "Allow",
