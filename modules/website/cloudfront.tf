@@ -1,7 +1,7 @@
 resource "aws_cloudfront_distribution" "site_s3_distribution" {
 
   aliases             = var.cdn_domains
-  price_class         = "PriceClass_200"
+  price_class         = "PriceClass_All"
   depends_on          = [aws_s3_bucket.bucket_site]
   enabled             = true
   is_ipv6_enabled     = true
