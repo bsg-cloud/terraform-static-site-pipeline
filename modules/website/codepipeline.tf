@@ -48,5 +48,25 @@ resource "aws_codepipeline" "prod_pipeline" {
     }
   }
 
+ stage {
+    name = "Web2Server"
+    action {
+      category = "Deploy"
+      configuration = {
+        "ApplicationName"     = var.codedeploy_app_name #"eh-codedeploy-app"
+        "DeploymentGroupName" = var.codedeploy_group_name #"ehanglas_webserver_deploy"
+      }
+      input_artifacts = [
+        "BuildArtifact"
+      ]
+      name             = "Web2Server"
+      output_artifacts = []
+      owner            = "AWS"
+      provider         = "CodeDeploy"
+      #region           = "ap-northeast-2"
+      run_order = 1
+      version   = "1"
+    }
+  }
   
 }
